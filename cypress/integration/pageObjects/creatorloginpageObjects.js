@@ -1,5 +1,5 @@
 
-class vuloginPage {
+class creatorloginPage {
     usernameTxtbox = "#emailInput";
     passwordTxtbox = "#passwordInput";
     loginBtn = "form > button[type='submit']";
@@ -20,4 +20,4 @@ class vuloginPage {
         cy.xpath(this.logoutBtn).click()
     }
 }
-export default new vuloginPage();
+export default new creatorloginPage();

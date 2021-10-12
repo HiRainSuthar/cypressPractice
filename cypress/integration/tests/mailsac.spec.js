@@ -8,7 +8,7 @@ describe('Register a user', function () {
     beforeEach(function() {
         // load example.json fixture file and store
         // in the test context object
-        cy.fixture('vulogindetail').as('emaildata')
+        cy.fixture('logindata').as('emaildata')
     })
     var firstName = getFirstName()
     var lastName = getLastName()

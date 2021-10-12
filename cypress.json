@@ -1,5 +1,5 @@
 {
-    "baseUrl" : "https://automationteststore.com/",
+    "baseUrl" : "putTheBaseUrlHere",
     "reporter": "cypress-multi-reporters",
     "reporterOptions": {
         "reporterEnabled": "mochawesome",
@@ -12,5 +12,6 @@
         }
     },
     "video":false,
-    "chromeWebSecurity": false
+    "chromeWebSecurity": false,
+    "watchForFileChanges": false
 }
