@@ -1,6 +1,6 @@
 class loungePage{
     loungeLinkOnNavBar = "//div[@id='navbarCollapse']/links[1]//a[contains(text(),'Lounge')]"
-    createNewLoungeRoomBtn = "#createNewLoungeRoom"
+    createNewLoungeRoomBtn = "//div[@id='createNewLoungeRoom']/parent::div/parent::div"
     roomNameTxtboxOnModal = "#defaultForm-roomName"
     createRoomBtnOnModal = "#createLoungeRoomBtn"
     modalClostBtn = "#createLoungeRoomModalCloseBtn"
@@ -8,6 +8,7 @@ class loungePage{
     endMeetingBtn = "#disconnectBtn"
 
     createLoungeRoom(loungeRoomName){
+        cy.wait(5000)
         cy.xpath(this.createNewLoungeRoomBtn).click();
         cy.get(this.roomNameTxtboxOnModal).type(loungeRoomName)
         cy.get(this.createRoomBtnOnModal).click()

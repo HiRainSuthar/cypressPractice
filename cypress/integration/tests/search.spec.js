@@ -11,7 +11,7 @@ describe('Tests for Search tab', function () {
     it('Enter Search Page', function () {
         cy.xpath(searchPage.searchLinkInNavBar).click()
         cy.wait(5000)
-        cy.xpath(searchPage.searchTxtbox).should('be.visible')
+        cy.get(searchPage.searchTxtbox).should('be.visible')
     })
     it('Perfrom Search Funciton', function () {
         cy.get(searchPage.searchTxtbox).type("going")

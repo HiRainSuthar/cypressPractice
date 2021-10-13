@@ -1,6 +1,6 @@
 class registerPage{
 
-    baseUrl = 'https://nowvue.live/vue-by-nowevents-demo-A000180/register'
+    // baseUrl = 'https://nowvue.live/vue-by-nowevents-demo-A000180/register'
     emailTxtbox = "(//input[@placeholder='Enter your email'])[1]"
     accessNowBtn = "//span[contains(text(),'Access now')]"
 
@@ -8,7 +8,7 @@ class registerPage{
     logoutBtn = "//div[@id='navbarCollapse']//div//a[contains(text(),'Logout')]"
 
     goToDashboard(){
-        cy.visit(this.baseUrl)
+        cy.visit('/')
         cy.wait(7000)
         cy.xpath(this.emailTxtbox).type("test@test.com")
         cy.wait(500)
