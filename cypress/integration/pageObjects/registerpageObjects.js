@@ -5,7 +5,7 @@ class registerPage{
     accessNowBtn = "//span[contains(text(),'Access now')]"
 
     userProfileBtn = "//div[@id='navbarCollapse']/links[2]/ul/li[1]/a/img"
-    logoutBtn = "//div[@id='navbarCollapse']//div//a[contains(text(),'Logout')]"
+    logoutBtn = "//div[@role='menu']//a" //div[@id='navbarCollapse']//div//a[contains(text(),'Logout')]
 
     goToDashboard(){
         cy.visit('/')
