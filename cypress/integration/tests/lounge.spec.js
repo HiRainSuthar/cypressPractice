@@ -1,3 +1,4 @@
+/// <reference types="cypress" />
 import registerPage from '../pageObjects/registerpageObjects'
 import loungePage from '../pageObjects/loungepageObjects'
 

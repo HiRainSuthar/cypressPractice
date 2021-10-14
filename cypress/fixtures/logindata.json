@@ -1,5 +1,7 @@
 {
   "validUserName":"jonathantok.workspace@gmail.com",
   "validPassword":"HANG6wuc",
-  "testUserNameToBypassMagicLink":"test@test.com"
+  "testUserNameToBypassMagicLink":"test@test.com",
+  "personToSearch" :"Jonathan Tok",
+  "organizationToSearch": "testorganization"
 }

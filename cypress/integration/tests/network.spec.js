@@ -1,23 +1,27 @@
+/// <reference types="cypress" />
+import registerPage from '../pageObjects/registerpageObjects'
+import networkPage from '../pageObjects/networkpageObjects'
 
 describe('Tests for network tab',function(){
     before(function(){
-        cy.visit('https://nowvue.live/vue-by-nowevents-demo-A000180/register')
-        cy.wait(5000)
-        cy.xpath("(//input[@placeholder='Enter your email'])[1]").type("test@test.com")
-        cy.wait(500)
-        cy.xpath("//span[contains(text(),'Access now')]").click()
-        cy.wait(5000)
-        cy.xpath("//div[@id='navbarCollapse']/links[1]//a[contains(text(),'Network')]").click()
+        registerPage.goToDashboard()
+    })
+    beforeEach(function(){
+        cy.fixture('logindata').as('logindata');
     })
     after(function(){
-        cy.xpath("//div[@id='navbarCollapse']/links[2]/ul/li[1]/a/img").click()
-        cy.xpath("//div[@id='navbarCollapse']//div//a[contains(text(),'Logout')]").click()
+        registerPage.logout()
     })
-    it('Edit personal Profile (Via Network)', function(){
-        cy.xpath("(((//mdb-card)[1])//mdb-icon)[2]").click()
+    it('Search person within network', function(){
+        networkPage.search(this.logindata.personToSearch)
+        cy.get(networkPage.searchResult).should('be.visible')
+        cy.xpath(networkPage.searchResultName).should('contain.text',this.logindata.personToSearch)
+        cy.get(networkPage.clearSerchFieldBtn).click()
+    })
+    it('Search organization within network', function(){
+        networkPage.search(this.logindata.organizationToSearch)
+        cy.get(networkPage.searchResult).should('be.visible')
+        cy.xpath(networkPage.searchResultOrganization).should('contain.text',this.logindata.organizationToSearch)
+        cy.get(networkPage.clearSerchFieldBtn).click()
     })
 })
-
-
-
-//div[@id="navbarCollapse"]/links[1]//a[contains(text(),'Network')]

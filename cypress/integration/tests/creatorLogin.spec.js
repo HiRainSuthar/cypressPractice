@@ -3,8 +3,8 @@
 import creatorloginPage from '../pageObjects/creatorloginpageObjects'
 
 describe('Login tests', function(){
-    this.beforeAll(function () {
-        cy.fixture('vulogindetail').as('logindata');
+    this.beforeEach(function () {
+        cy.fixture('logindata').as('logindata');
     })
     after(function(){
         creatorloginPage.logut();

@@ -1,7 +1,7 @@
 
 import { getFirstName, getLastName, emailGenerator } from '../../support/utility.js'
 
-describe('Register a user', function () {
+describe.skip('Register a user', function () {
     before(function () {
         cy.writeFile('cypress/fixtures/vulogindetail.json', { email: emailGenerator() })
     })
