@@ -6,6 +6,14 @@ class networkPage {
     clearSerchFieldBtn = "#clearSearchFieldBtn"
     searchResultOrganization = "//app-networking//mdb-card-text/p/div[2]"
     chatBtnOnProfile = "//app-networking//mdb-card/mdb-card-body/div/div[1]"
+    profileEditBtn = "(//app-user-profile//mdb-card//button[contains(text(),'Edit')])[2]"
+    emailInProfile = "(//app-user-profile//mdb-card//mdb-icon[@icon='envelope']/ancestor::p)[2]"
+    saveInProfile = "//app-edit-profile//mdb-card//button[contains(text(),'Save')])[1]"
+    jobInProfile = "//input[@id='jobTitleInputForLargeScreen']"
+    chatBtnInProfileInSearch= "//app-networking//mdb-card-body//div[contains(text(),'Chat')]"
+    chatBox = "//mdb-card[@id='myForm']"
+    profilesOnSearch = "//app-networking//mdb-card/mdb-card-body/div/div[2]/div"
+    messageBtnOnProfile = "//app-user-profile//mdb-card//button[contains(text(),'Message')]"
 
     search(keywordToSearch) {
         cy.xpath(this.networkTabOnNavBar).click()

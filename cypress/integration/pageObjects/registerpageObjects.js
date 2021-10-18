@@ -6,6 +6,7 @@ class registerPage{
 
     userProfileBtn = "//div[@id='navbarCollapse']/links[2]/ul/li[1]/a/img"
     logoutBtn = "//div[@role='menu']//a" //div[@id='navbarCollapse']//div//a[contains(text(),'Logout')]
+    myAccountBtn = "//div[@role='menu']//span"
 
     goToDashboard(){
         cy.visit('/')
