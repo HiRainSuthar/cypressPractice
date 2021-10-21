@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
-import registerPage from '../pageObjects/registerpageObjects'
-import networkPage from '../pageObjects/networkpageObjects'
+import registerPage from '../../pageObjects/registerpageObjects'
+import networkPage from '../../pageObjects/networkpageObjects'
 
 describe('Tests for network tab',function(){
     before(function(){
@@ -43,5 +43,10 @@ describe('Tests for network tab',function(){
         cy.wait(1000)
         cy.xpath(networkPage.messageBtnOnProfile).last().click()
         cy.xpath(networkPage.chatBox).first().should('be.visible')
+    })
+    it('Search Unknown user/company', function(){
+        networkPage.search('unknown')
+        cy.get(networkPage.searchResult).should('not.be.visible')
+        cy.get(networkPage.clearSerchFieldBtn).click()
     })
 })

@@ -1,5 +1,5 @@
-import searchPage from '../pageObjects/searchpageObjects'
-import registerPage from '../pageObjects/registerpageObjects'
+import searchPage from '../../pageObjects/searchpageObjects'
+import registerPage from '../../pageObjects/registerpageObjects'
 
 describe('Tests for Search tab', function () {
     before(function () {

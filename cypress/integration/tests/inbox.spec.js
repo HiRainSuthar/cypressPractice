@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
-import registerPage from '../pageObjects/registerpageObjects'
-import inboxPage from '../pageObjects/inboxObjects'
+import registerPage from '../../pageObjects/registerpageObjects'
+import inboxPage from '../../pageObjects/inboxObjects'
 
 describe('Tests for inbox tab',function(){
     before(function(){

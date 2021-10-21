@@ -11,6 +11,7 @@ class registerPage{
     goToDashboard(){
         cy.visit('/')
         cy.wait(7000)
+        cy.title().should('eq', 'NowEvents')
         cy.xpath(this.emailTxtbox).type("test@test.com")
         cy.wait(500)
         cy.xpath(this.accessNowBtn).click()

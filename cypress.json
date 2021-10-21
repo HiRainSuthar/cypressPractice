@@ -1,5 +1,5 @@
 {
-    "baseUrl" : "https://nowvue.live/vue-by-nowevents-demo-A000180/register",
+    "baseUrl": "https://nowvue.live/vue-by-nowevents-demo-A000180/register",
     "reporter": "cypress-multi-reporters",
     "reporterOptions": {
         "reporterEnabled": "mochawesome",
@@ -11,7 +11,9 @@
             "json": true
         }
     },
-    "video":false,
+    "video": false,
     "chromeWebSecurity": false,
-    "watchForFileChanges": false
+    "watchForFileChanges": false,
+    "viewportWidth": 1000,
+    "viewportHeight": 900
 }

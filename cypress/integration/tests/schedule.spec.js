@@ -1,31 +1,36 @@
 /// <reference types="cypress" />
-import registerPage from '../pageObjects/registerpageObjects'
-import schedulePage from '../pageObjects/schedulepageObjects'
+import registerPage from '../../pageObjects/registerpageObjects'
+import schedulePage from '../../pageObjects/schedulepageObjects'
+import homepage from '../../pageObjects/homepageObjects'
 
 describe('Tests for schedule tab',function(){
     before(function(){
         registerPage.goToDashboard();
     })
-    // after(function(){
-    //     registerPage.logout()
-    // })
-    it('Schedule tests', function(){
-        cy.xpath(schedulePage.ScheduleLinkInNavBar).click()
-        cy.get(schedulePage.scheduleMeetingBtn).click()
-        cy.get(schedulePage.addNewEventBtn).should('be.visible')
-        cy.get(schedulePage.eventNameInModal).type("testEvent")
-        cy.get(1000)
-        cy.get(schedulePage.startDatePicker).click().type("2021-10-19")
-        cy.get(500)
-        cy.get("mdb-date-picker button.picker__button--close").click()
-        cy.get(500)
-        cy.get(schedulePage.endDatePicker).click().type("2021-10-19")
-        cy.get(500)
-        cy.get("mdb-date-picker button.picker__button--close").click()
-        cy.get(1000)
-        cy.get("#startTimeInput").click().type("11:00")
-        cy.get("#endTimeInput").click().type("11:30")
+    after(function(){
+        registerPage.logout()
+    })
+    it('Add event to the calendar', function(){
+        schedulePage.addNewEvent();
+        cy.get(schedulePage.eventOnCalendar).should('be.visible')
+    })
+    it('Edit the event', function(){
+        cy.get(schedulePage.eventOnCalendar).should('be.visible')
+        schedulePage.editEvent();
         cy.wait(1000)
-        cy.get(schedulePage.addNewEventBtn).click()
+    })
+    it('Delete event from the calendar', function(){
+        cy.get(schedulePage.eventOnCalendar).should('be.visible')
+        schedulePage.deleteEvent();
+        cy.get(schedulePage.eventOnCalendar).should('not.be.visible')
+        cy.wait(2000)
+    })
+    it('Add session to schedule', function(){
+        homepage.addSessionToSchedule();
+        cy.wait(1000)
+        cy.xpath(schedulePage.ScheduleLinkInNavBar).click()
+        cy.wait(1000)
+        cy.get("mwl-calendar-week-view-event div").first().should('be.visible')
+
     })
 })

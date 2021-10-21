@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
-import registerPage from '../pageObjects/registerpageObjects'
-import loungePage from '../pageObjects/loungepageObjects'
+import registerPage from '../../pageObjects/registerpageObjects'
+import loungePage from '../../pageObjects/loungepageObjects'
 
 describe('Tests for lounge tab', function () {
     before(function () {

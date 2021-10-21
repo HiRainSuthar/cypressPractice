@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
-import registerPage from '../pageObjects/registerpageObjects'
-import language from '../pageObjects/languageObjects'
+import registerPage from '../../pageObjects/registerpageObjects'
+import language from '../../pageObjects/languageObjects'
 
 
 describe.skip('Tests for language', function () {
