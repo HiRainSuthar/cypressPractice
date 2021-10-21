@@ -1,4 +1,4 @@
-import { getFormattedDate } from '../support/utility'
+import { getFormattedDate, getFutureMins, getFuturHour } from '../support/utility'
 class schedulePage {
 
     ScheduleLinkInNavBar = "//div[@id='navbarCollapse']/links[1]//a[contains(text(),'Schedule')]"
@@ -26,8 +26,10 @@ class schedulePage {
         cy.get(this.closeBtnInDatePicker).click()
         cy.get(this.endDatePicker).click().type(getFormattedDate())
         cy.get(this.closeBtnInDatePicker).click()
-        cy.get(this.eventStartTime).click().type("11:00")
-        cy.get(this.eventEndTime).click().type("11:30")
+        cy.get(this.eventStartTime).click().type(getFuturHour(1)+":"+"00")
+        cy.wait(1000)
+        cy.get(this.eventEndTime).click().type(getFuturHour(2)+":"+"00")
+        cy.wait(1000)
         cy.get(this.addNewEventBtn).click()
         cy.wait(1000)
     }
@@ -40,8 +42,8 @@ class schedulePage {
 
     editEvent() {
         cy.xpath(this.evenToEdit).click({ force: true })
-        cy.get(this.eventStartTime).click().type("10:00")
-        cy.get(this.eventEndTime).click().type("10:30")
+        cy.get(this.eventStartTime).click().type(getFuturHour(2)+":"+"00")
+        cy.get(this.eventEndTime).click().type(getFuturHour(3)+":"+"00")
         cy.get(this.editEventBtnOnModal).click()
     }
 }

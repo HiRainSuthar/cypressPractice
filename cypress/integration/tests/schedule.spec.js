@@ -24,7 +24,7 @@ describe('Tests for schedule tab',function(){
         cy.get(schedulePage.eventOnCalendar).should('not.be.visible')
         cy.wait(2000)
     })
-    it('Add session to schedule', function(){
+    it.skip('Add session to schedule', function(){
         homepage.addSessionToSchedule();
         cy.wait(1000)
         cy.xpath(schedulePage.ScheduleLinkInNavBar).click()

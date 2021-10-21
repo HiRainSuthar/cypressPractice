@@ -17,17 +17,24 @@ function emailGenerator() {
     return email + '@mailsac.com';
 }
 
+//Returns today's date in format YYYY-MM-DD
 function getFormattedDate() {
-    // let year = new Intl.DateTimeFormat('en', { year: 'numeric' }).format(d);
-    // let month = new Intl.DateTimeFormat('en', { month: 'numeric' }).format(d);
-    // let day = new Intl.DateTimeFormat('en', { day: 'numeric' }).format(d);
-    // return `${year}/${month}/${day}`;
     return datefns.format(new Date(), 'YYYY-MM-DD').toString()
 }
 
-function getFutureDate() {
-    return datefns.format(datefns.addDays(new Date(), 10), 'YYYY/MM/DD').toString()
+//Adds days to current date
+function getFutureDate(daysToAdd) {
+    return datefns.format(datefns.addDays(new Date(), daysToAdd), 'YYYY/MM/DD').toString()
 }
 
+//Adds hours to current time
+function getFuturHour(hourToAdd){
+    return datefns.format(datefns.addHours(new Date(), hourToAdd), 'hh').toString()
+}
 
-export {getFirstName, getLastName, emailGenerator, getFormattedDate, getFutureDate}
+//Adds mins to current time
+function getFutureMins(minsToAdd) {
+    console.log(datefns.format(datefns.addMinutes(new Date(), minsToAdd), 'mm').toString())
+}
+
+export {getFirstName, getLastName, emailGenerator, getFormattedDate, getFutureDate, getFuturHour, getFutureMins}
