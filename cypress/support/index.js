@@ -29,4 +29,8 @@ Cypress.Server.defaults({
     }
 })
 
+Cypress.on("window:before:load", win => {
+    win.indexedDB.deleteDatabase("firebaseLocalStorageDb");
+})
+
 /// <reference types="cypress" />

@@ -1,4 +1,5 @@
-class registerPage{
+/// <reference types="cypress" />
+class registerPage {
 
     // baseUrl = 'https://nowvue.live/vue-by-nowevents-demo-A000180/register'
     emailTxtbox = "(//input[@placeholder='Enter your email'])[1]"
@@ -8,7 +9,7 @@ class registerPage{
     logoutBtn = "//div[@role='menu']//a" //div[@id='navbarCollapse']//div//a[contains(text(),'Logout')]
     myAccountBtn = "//div[@role='menu']//span"
 
-    goToDashboard(){
+    goToDashboard() {
         cy.visit('/')
         cy.wait(7000)
         cy.title().should('eq', 'NowEvents')
@@ -18,9 +19,21 @@ class registerPage{
         cy.wait(5000)
     }
 
-    logout(){
+    logout() {
         cy.xpath(this.userProfileBtn).click()
         cy.xpath(this.logoutBtn).click()
+    }
+
+    //To clear the indexed db on condition
+    clearSession() {
+        cy.xpath(this.emailTxtbox).then($txtbox => {
+            if (!$txtbox.is(':visible')) {
+                cy.log('Into if block')
+                //you get here only if button is not visible
+                cy.clearIndexedDB()
+                cy.reload()
+            }
+        })
     }
 }
 

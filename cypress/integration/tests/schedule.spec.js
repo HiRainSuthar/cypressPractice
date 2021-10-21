@@ -1,4 +1,3 @@
-/// <reference types="cypress" />
 import registerPage from '../../pageObjects/registerpageObjects'
 import schedulePage from '../../pageObjects/schedulepageObjects'
 import homepage from '../../pageObjects/homepageObjects'
@@ -30,7 +29,6 @@ describe('Tests for schedule tab',function(){
         cy.wait(1000)
         cy.xpath(schedulePage.ScheduleLinkInNavBar).click()
         cy.wait(1000)
-        cy.get("mwl-calendar-week-view-event div").first().should('be.visible')
-
+        cy.get(schedulePage.sessionOnCalendar).first().should('be.visible')
     })
 })

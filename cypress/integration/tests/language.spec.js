@@ -3,7 +3,7 @@ import registerPage from '../../pageObjects/registerpageObjects'
 import language from '../../pageObjects/languageObjects'
 
 
-describe.skip('Tests for language', function () {
+describe('Tests for language', function () {
     before(function () {
         registerPage.goToDashboard()
     })
