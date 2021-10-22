@@ -1,6 +1,6 @@
-import registerPage from '../../pageObjects/registerpageObjects'
-import schedulePage from '../../pageObjects/schedulepageObjects'
-import homepage from '../../pageObjects/homepageObjects'
+import registerPage from '../../pages/register.page'
+import schedulePage from '../../pages/schedule.page'
+import homepage from '../../pages/home.page'
 
 describe('Tests for schedule tab',function(){
     before(function(){

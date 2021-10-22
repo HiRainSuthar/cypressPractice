@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
 
-import creatorloginPage from '../../pageObjects/creatorloginpageObjects'
+import creatorloginPage from '../../pages/creatorlogin.page'
 
 describe('Login tests', function(){
     this.beforeEach(function () {

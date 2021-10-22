@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
-import registerPage from '../../pageObjects/registerpageObjects'
-import networkPage from '../../pageObjects/networkpageObjects'
+import registerPage from '../../pages/register.page'
+import networkPage from '../../pages/network.page'
 
 describe('Tests for network tab',function(){
     before(function(){
