@@ -24,11 +24,20 @@ describe('Tests for network tab',function(){
         cy.xpath(networkPage.searchResultOrganization).should('contain.text',this.logindata.organizationToSearch)
         cy.get(networkPage.clearSerchFieldBtn).click()
     })
+    //Assumption is - there would only be one profile with same name
+    it.skip('Edit personal Profile (Via Network)', function(){
+        networkPage.search('tommy')
+        cy.xpath(networkPage.profilesOnSearch).first().click()
+        cy.xpath(networkPage.profileEditBtn).should('be.visible').click()
+        cy.xpath(networkPage.jobInProfile).clear().type('developerInTestOne')
+        cy.xpath(networkPage.saveInProfile).click()
+        cy.xpath(networkPage.profileEditBtn).should('be.visible')
+    })
     it('Edit personal Profile (Via Profile Icon)', function(){
         cy.xpath(registerPage.userProfileBtn).click();
         cy.xpath(registerPage.myAccountBtn).click()
         cy.xpath(networkPage.profileEditBtn).should('be.visible').click()
-        cy.xpath(networkPage.jobInProfile).clear().type('developerInTest')
+        cy.xpath(networkPage.jobInProfile).clear().type('developerInTestTwo')
         cy.xpath(networkPage.saveInProfile).click()
         cy.xpath(networkPage.profileEditBtn).should('be.visible')
     })
@@ -50,3 +59,6 @@ describe('Tests for network tab',function(){
         cy.get(networkPage.clearSerchFieldBtn).click()
     })
 })
+
+////app-networking//mdb-card/mdb-card-body/div/div[2]
+//
