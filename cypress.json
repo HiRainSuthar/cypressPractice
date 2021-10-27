@@ -15,5 +15,6 @@
     "chromeWebSecurity": false,
     "watchForFileChanges": false,
     "viewportWidth": 1000,
-    "viewportHeight": 900
+    "viewportHeight": 900,
+    "retries" :1
 }
