@@ -23,8 +23,13 @@ $ cd cypressProject
 $ npm test
 ```
 
-### Nightwatch
+### Cypress
 For official documentation and more information refer [Cypress](https://www.cypress.io/)
 
 ### Reporting
-Work in progress. Will be added shortly.
+mochaawesome reporter is used 
+on successful test run reports is generated automatically using posttest script
+
+To generate reports manually
+combine reports - npm run combine-reports
+generate report - npm run generate-report
