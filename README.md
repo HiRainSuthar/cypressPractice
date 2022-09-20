@@ -4,8 +4,8 @@ This project was build using below  :
 
   - Build management tool - NPM
   - Web browser automation library - Cypress
-  - Assertion library - Inbuilt
-  - Reporting - Will be added shortly
+  - Assertion library - chai
+  - Reporting - Mochaawesome
 
 ### Pre-requisite
 This project requires [Java](https://java.com/en/download/) and [Node.js](https://nodejs.org/en/download/)  to run.
@@ -17,7 +17,7 @@ $ cd cypressProject
 $ npm i
 ```
 
-Run the tests.
+###Run the tests.
 ```sh
 $ cd cypressProject
 $ npm test
@@ -27,8 +27,9 @@ $ npm test
 For official documentation and more information refer [Cypress](https://www.cypress.io/)
 
 ### Reporting
-mochaawesome reporter is used 
-on successful test run reports is generated automatically using posttest script
+mochaawesome reporter is used
+
+on successful test run report is generated automatically using posttest script
 
 To generate reports manually
 combine reports - npm run combine-reports
