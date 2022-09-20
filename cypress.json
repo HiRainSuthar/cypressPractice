@@ -1,5 +1,5 @@
 {
-    "baseUrl" : "https://automationteststore.com/",
+    "baseUrl": "https://nowvue.live/vue-by-nowevents-demo-A000180/register",
     "reporter": "cypress-multi-reporters",
     "reporterOptions": {
         "reporterEnabled": "mochawesome",
@@ -8,8 +8,16 @@
             "quite": true,
             "overwrite": false,
             "html": false,
-            "json": true
+            "json": true,
+            "embeddedScreenshots": true,
+            "inlineAssets": true,
+            "charts": true
         }
     },
-    "video":false
+    "video": false,
+    "chromeWebSecurity": false,
+    "watchForFileChanges": false,
+    "viewportWidth": 1000,
+    "viewportHeight": 900,
+    "retries": 1
 }

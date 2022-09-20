@@ -1,8 +1,0 @@
-{
-    "validUserName": "cypresstest",
-    "validPassword": "cypress",
-    "invalidUserName": "cypress1",
-    "invalidPassword": "cypress1",
-    "welcomeMessage": "Welcome back cypresfirstname",
-    "loginFailedMessage": "Incorrect login or password provided."
-}
