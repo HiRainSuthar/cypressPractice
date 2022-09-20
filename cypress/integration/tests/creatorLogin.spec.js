@@ -3,7 +3,8 @@
 import creatorloginPage from '../../pages/creatorlogin.page'
 
 describe('Login tests', function(){
-    this.beforeEach(function () {
+    before(function () {
+        cy.clearFirebaseAuth()
         cy.fixture('logindata').as('logindata');
     })
     after(function(){

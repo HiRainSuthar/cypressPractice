@@ -4,6 +4,7 @@ import networkPage from '../../pages/network.page'
 
 describe('Tests for network tab',function(){
     before(function(){
+        cy.clearFirebaseAuth()
         registerPage.goToDashboard()
     })
     beforeEach(function(){

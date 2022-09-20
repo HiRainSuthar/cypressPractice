@@ -3,6 +3,7 @@ import registerPage from '../../pages/register.page'
 
 describe('Tests for Search tab', function () {
     before(function () {
+        cy.clearFirebaseAuth();
         registerPage.goToDashboard()
     })
     after(function () {

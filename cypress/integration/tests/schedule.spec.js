@@ -4,6 +4,7 @@ import homepage from '../../pages/home.page'
 
 describe('Tests for schedule tab',function(){
     before(function(){
+        cy.clearFirebaseAuth()
         registerPage.goToDashboard();
     })
     after(function(){

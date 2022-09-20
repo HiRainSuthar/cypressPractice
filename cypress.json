@@ -8,7 +8,10 @@
             "quite": true,
             "overwrite": false,
             "html": false,
-            "json": true
+            "json": true,
+            "embeddedScreenshots": true,
+            "inlineAssets": true,
+            "charts": true
         }
     },
     "video": false,
@@ -16,5 +19,5 @@
     "watchForFileChanges": false,
     "viewportWidth": 1000,
     "viewportHeight": 900,
-    "retries" :1
+    "retries": 1
 }

@@ -20,6 +20,7 @@ import './commands'
 // require('./commands')
 require('cypress-xpath')
 
+//This is to not log XHR requests while runing tests with cypress open
 Cypress.Server.defaults({
     delay: 500,
     force404: false,
@@ -29,8 +30,9 @@ Cypress.Server.defaults({
     }
 })
 
-Cypress.on("window:before:load", win => {
-    win.indexedDB.deleteDatabase("firebaseLocalStorageDb");
-})
+//To clear indexeddb in localstorage
+// Cypress.on("window:before:load", win => {
+//     win.indexedDB.deleteDatabase("firebaseLocalStorageDb");
+// })
 
 /// <reference types="cypress" />

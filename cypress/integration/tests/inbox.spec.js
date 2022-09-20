@@ -4,6 +4,7 @@ import inboxPage from '../../pages/inbox.page'
 
 describe('Tests for inbox tab',function(){
     before(function(){
+        cy.clearFirebaseAuth()
         registerPage.goToDashboard()
     })
     after(function(){

@@ -4,6 +4,7 @@ import loungePage from '../../pages/lounge.page'
 
 describe('Tests for lounge tab', function () {
     before(function () {
+        cy.clearFirebaseAuth()
         registerPage.goToDashboard()
     })
     this.beforeEach(function(){

@@ -5,6 +5,7 @@ import language from '../../pages/language.page'
 
 describe('Tests for language', function () {
     before(function () {
+        cy.clearFirebaseAuth()
         registerPage.goToDashboard()
     })
     after(function () {
@@ -24,29 +25,6 @@ describe('Tests for language', function () {
         cy.wait(1000)
         cy.get(language.languageIcon).click()
         cy.xpath(language.defaultSelectionOnDropdown).click()
-    })
-    it('Refresh page', function () {
-        cy.get(language.languageIcon).click()
-        cy.wait(2000)
-        cy.get(language.languageDropdown).should('be.visible')
-        cy.xpath(language.defaultSelectionOnDropdown).should('have.text', 'English')
-        cy.get(language.languageOption).click()
-        cy.wait(15000)
-        cy.get(language.languageIcon).click()
-        cy.xpath(language.defaultSelectionOnDropdown).should('have.text', 'bahasa Inggris')
-        cy.reload();
-        cy.wait(15000)
-        cy.get(language.languageIcon).click()
-        cy.xpath(language.defaultSelectionOnDropdown).should('have.text', 'bahasa Inggris')
-        cy.wait(2000)
-        cy.get('body').click(0,0);
-        cy.wait(2000)
-        cy.get(language.languageIcon).click()
-        cy.get('body').click(0,0);
-        cy.wait(2000)
-        cy.get(language.languageIcon).click()
-        cy.xpath(language.defaultSelectionOnDropdown).click()
-        cy.wait(15000)
     })
     it('Refresh page', function () {
         cy.get(language.languageIcon).click()
