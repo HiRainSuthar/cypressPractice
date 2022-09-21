@@ -18,3 +18,12 @@ import './commands'
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
+//This is to not log XHR requests while runing tests with cypress open
+Cypress.Server.defaults({
+    delay: 500,
+    force404: false,
+    ignore: (xhr) => {
+        // handle custom logic for whitelisting
+        return true;
+    }
+})
